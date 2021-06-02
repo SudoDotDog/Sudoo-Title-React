@@ -7,8 +7,7 @@
 import { LOCALE } from "@sudoo/internationalization";
 import { Title } from "@sudoo/title";
 import * as React from "react";
-
-export type ResetTitleFunction = (...newTitleArgs: string[]) => void;
+import { ResetTitleFunction } from "./declare";
 
 export const buildUseTitle = (title: Title, locale: LOCALE) => {
 
