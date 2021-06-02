@@ -11,8 +11,10 @@ React function for Title
 
 ```sh
 yarn add @sudoo/title-react
-yarn add @sudoo/title # Peer Dependencies
+yarn add @sudoo/title # Peer Dependency
+yarn add @sudoo/internationalization # Peer Dependency
 # Or
 npm install @sudoo/title-react --save
-npm install @sudoo/title --save # Peer Dependencies
+npm install @sudoo/title --save # Peer Dependency
+npm install @sudoo/internationalization --save # Peer Dependency
 ```
