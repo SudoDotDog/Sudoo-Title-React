@@ -14,7 +14,13 @@
   "homepage": "https://github.com/SudoDotDog/Sudoo-Title-React#readme",
   "devDependencies": {
     "@sudoo/io": "^1.8.0",
+    "@sudoo/react-force": "^1.9.0",
+    "@sudoo/react-force-dev": "^1.9.0",
+    "@sudoo/title": "^1.0.2",
     "@sudoo/triforce": "^2.9.25"
+  },
+  "peerDependencies": {
+    "@sudoo/title": "*"
   },
   "nyc": {
     "extension": [
