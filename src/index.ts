@@ -5,5 +5,6 @@
  */
 
 export * from "./declare";
+export * from "./internationalization";
 export * from "./title";
 
