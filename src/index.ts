@@ -3,3 +3,5 @@
  * @namespace TitleReact
  * @description Index
  */
+
+export * from "./title";
