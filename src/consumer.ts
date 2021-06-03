@@ -9,7 +9,11 @@ import { InternationalizationContext, InternationalizationContextValue } from "@
 import { Title } from "@sudoo/title";
 import * as React from "react";
 
-export const withInternationalizationUseTitle = (Component: React.ComponentType, titleRecord: Partial<Record<LOCALE, Title>>): React.FC => {
+export const withInternationalizedTitle = (
+    Component: React.ComponentType,
+    titleRecord: Partial<Record<LOCALE, Title>>,
+    defaultLocale: LOCALE = LOCALE.ENGLISH_UNITED_STATES,
+): React.FC => {
 
     return (originalProps: any) => {
 
@@ -18,7 +22,11 @@ export const withInternationalizationUseTitle = (Component: React.ComponentType,
             undefined,
             (value: InternationalizationContextValue) => {
 
-                const title: Title = titleRecord[value.locale];
+                let title: Title | undefined = titleRecord[value.locale];
+                if (!title) {
+
+                    title = titleRecord[defaultLocale] as Title;
+                }
 
                 return React.createElement(Component, {
 
