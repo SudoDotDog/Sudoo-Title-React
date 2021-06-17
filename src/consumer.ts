@@ -9,13 +9,22 @@ import { InternationalizationContext, InternationalizationContextValue } from "@
 import { Title } from "@sudoo/title";
 import * as React from "react";
 
-export const withInternationalizedTitle = (
-    Component: React.ComponentType,
+export type WithInternationalizedTitleProps = {
+
+    readonly title: Title;
+};
+
+export const withInternationalizedTitle = <P extends WithInternationalizedTitleProps>(
+    Component: React.ComponentType<P>,
     titleRecord: Partial<Record<LOCALE, Title>>,
     defaultLocale: LOCALE = LOCALE.ENGLISH_UNITED_STATES,
-): React.FC => {
+): React.ComponentType<Omit<P, keyof WithInternationalizedTitleProps>> & {
+    WrappedComponent: React.ComponentType<P>;
+} => {
 
-    return (originalProps: any) => {
+    const component: React.ComponentType<Omit<P, keyof WithInternationalizedTitleProps>> & {
+        WrappedComponent: React.ComponentType<P>;
+    } = (originalProps: any) => {
 
         return React.createElement(
             InternationalizationContext.Consumer,
@@ -36,4 +45,7 @@ export const withInternationalizedTitle = (
             },
         );
     };
+
+    component.WrappedComponent = Component;
+    return component;
 };
