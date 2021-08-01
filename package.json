@@ -12,18 +12,19 @@
     "url": "https://github.com/SudoDotDog/Sudoo-Title-React/issues"
   },
   "homepage": "https://github.com/SudoDotDog/Sudoo-Title-React#readme",
+  "peerDependencies": {
+    "@sudoo/internationalization": "*",
+    "@sudoo/title": "*"
+  },
   "devDependencies": {
+    "@sudoo/build-utils": "^1.0.0",
     "@sudoo/internationalization": "^1.7.1",
     "@sudoo/internationalization-react": "^1.4.0",
-    "@sudoo/io": "^1.8.0",
+    "@sudoo/license": "^1.1.0",
     "@sudoo/react-force": "^1.9.0",
     "@sudoo/react-force-dev": "^1.9.0",
     "@sudoo/title": "^1.0.2",
     "@sudoo/triforce": "^2.9.29"
-  },
-  "peerDependencies": {
-    "@sudoo/internationalization": "*",
-    "@sudoo/title": "*"
   },
   "nyc": {
     "extension": [
